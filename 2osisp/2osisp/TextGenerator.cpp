@@ -29,10 +29,7 @@ std::wstring TextGenerator::RandomString(int len)
 	while (newstr.size() <= len) {
 		pos = ((rand() % (strRand.size() - 1)));
 		newstr += strRand.substr(pos, 1);
-		if (newstr.size() % (rand() % 3 + 1) == 0)
-		{
-			newstr += L" ";
-		}
+		newstr += L" ";
 	}
 	return newstr;
 }
