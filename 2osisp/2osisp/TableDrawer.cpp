@@ -1,5 +1,9 @@
 #include "stdafx.h"
 #include "TableDrawer.h"
+#include <codecvt>
+#include <string>
+#include <algorithm>
+#include <locale>
 
 
 TableDrawer::TableDrawer(int newRowCount, int newColumnCount, TStringsMatrix newPhrases)
@@ -113,8 +117,14 @@ int TableDrawer::CalculateVerticalBorders(HDC hDc)
 			rect.bottom = 0;
 			rect.left = horizontalBorders[j][0];
 			rect.right = horizontalBorders[j][1];
-
-			DrawText(hDc, phrases[i][j].c_str(), -1, &rect, DT_CALCRECT | DT_WORDBREAK | DT_WORD_ELLIPSIS);
+			if (i == 0 && j == 0) {
+				//wstring_convert <codecvt_utf8_utf16<wchar_t» converter;
+			
+				DrawText(hDc, L"SSSSS", -1, &rect, DT_CALCRECT | DT_WORDBREAK | DT_WORD_ELLIPSIS);
+			}
+			else {
+				DrawText(hDc, phrases[i][j].c_str(), -1, &rect, DT_CALCRECT | DT_WORDBREAK | DT_WORD_ELLIPSIS);
+			}
 			rowMaxHeight = max(rowMaxHeight, rect.bottom);
 		}
 		totalHeight += rowMaxHeight;

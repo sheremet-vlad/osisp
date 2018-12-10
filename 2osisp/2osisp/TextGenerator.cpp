@@ -14,22 +14,22 @@ TextGenerator::TextGenerator()
 	{
 		for (int j = 0; j < MAX_COLUMNS; j++)
 		{
-			textRow.push_back(RandomString(10).c_str());
+			textRow.push_back(L"hello");
 		}
 		text.push_back(textRow);
 		textRow.clear();
 	}
 }
 
-std::wstring TextGenerator::RandomString(int len)
+/*std::wstring TextGenerator::RandomString(int len)
 {
 	std::wstring strRand = L"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	std::wstring newstr;
 	int pos;
 	while (newstr.size() <= len) {
 		pos = ((rand() % (strRand.size() - 1)));
-		newstr += strRand.substr(pos, 1);
+	newstr = L"hello";
 		newstr += L" ";
-	}
-	return newstr;
-}
+	
+	return str;
+}*/
