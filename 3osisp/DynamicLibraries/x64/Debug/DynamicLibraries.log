@@ -1,0 +1,3 @@
+﻿  pch.cpp
+  DynamicLibraries.cpp
+MyDll.lib(MyDll.dll) : fatal error LNK1112: module machine type 'x86' conflicts with target machine type 'x64'
